@@ -2,23 +2,28 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+       
 <tiles-definitions>
-  <definition name="notice.list" template="/WEB-INF/view/CustomerCenter/inc/layout.jsp">
-    <put-attribute name="title" value="공지사항" />
-    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
-    <put-attribute name="visual" value="/WEB-INF/view/CustomerCenter/inc/visual.jsp" />
-    <put-attribute name="aside" value="/WEB-INF/view/CustomerCenter/inc/aside.jsp" />
-    <put-attribute name="body" value="/WEB-INF/view/CustomerCenter/notice/list.jsp" />
-    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
-    
-  </definition>
-    <definition name="notice.detail" template="/WEB-INF/view/CustomerCenter/inc/layout.jsp">
-    <put-attribute name="title" value="공지사항" />
-    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
-    <put-attribute name="visual" value="/WEB-INF/view/CustomerCenter/inc/visual.jsp" />
-    <put-attribute name="aside" value="/WEB-INF/view/CustomerCenter/inc/aside.jsp" />
-    <put-attribute name="body" value="/WEB-INF/view/CustomerCenter/notice/detail.jsp" />
-    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
-  </definition>
+
+	<definition name="index" template="/WEB-INF/view/inc/layout.jsp">
+	    <put-attribute name="title" value="Wellcome To Chaneui World!" />
+	    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/view/index.jsp" />
+	    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+  	</definition>
+
+
+<!-- Wildcard를 사용하여 tiles library 사용하기 -->
+	<definition name="notice.*" template="/WEB-INF/view/CustomerCenter/inc/layout.jsp">
+	    <put-attribute name="title" value="공지사항" />
+	    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+	    <put-attribute name="visual" value="/WEB-INF/view/CustomerCenter/inc/visual.jsp" />
+	    <put-attribute name="aside" value="/WEB-INF/view/CustomerCenter/inc/aside.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/view/CustomerCenter/notice/{1}.jsp" />
+	    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+    </definition>
   
-</tiles-definitions>
+
+  
+</tiles-definitions> 
